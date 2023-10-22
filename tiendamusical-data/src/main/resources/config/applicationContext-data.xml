@@ -49,6 +49,10 @@
 				<prop key="hibernate.jdbc.time_zone">America/Mexico_City</prop>
 			</props>
 		</property>
+		<!-- este es un proveedor de persistencia, es el responsable de q se pueda interactuar con los entities de jpa en la bbdd -->
+		<property name="persistenceProvider">
+			<bean class="org.hibernate.jpa.HibernatePersistenceProvider"></bean>
+		</property>
 	</bean>
 
 	<!-- SE ENCARGA DE GENERAR UN ADMINISTRADOR DE TRANSACCIONES PARA EL CRUD DE LOS ENTITYS-->
