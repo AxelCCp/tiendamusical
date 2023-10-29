@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> <!-- para incluir contenido de otras pantallas en esta pantalla ... importa xhtml -->
+      
+ 
+   
+   		
+		<div class="p-grid">
+			<div class="p-col" style="background-color: black">
+				
+				<div class="ui-inputgroup" style="display:block; text-align:center;">
+					<p:inputText id="txtBuscador" style="width:90%; margin-bottom:20px;" value="" placeholder="Artista, albun, etc..."></p:inputText>
+				</div>
+				
+				<div class="ui-inputgroup">
+					<p:panel id="pnlResultados" style="width:90%; margin:0px auto; border:none;">
+					
+					</p:panel>
+				</div>
+				
+			</div>
+		</div>
+    			
+      		
+      
+</ui:composition>
