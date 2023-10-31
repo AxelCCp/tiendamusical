@@ -15,20 +15,20 @@ import javax.persistence.Table;
  * Clase que representa entidades de albunes que han generado los artistas.
  */
 @Entity
-@Table(name="albun")
-public class Albun {
+@Table(name="album")
+public class Album {
 	/**
-	 * @return the idAlbun
+	 * @return the idAlbum
 	 */
-	public Long getIdAlbun() {
-		return idAlbun;
+	public Long getIdAlbum() {
+		return idAlbum;
 	}
 
 	/**
-	 * @param idAlbun the idAlbun to set
+	 * @param idAlbum the idAlbun to set
 	 */
-	public void setIdAlbun(Long idAlbun) {
-		this.idAlbun = idAlbun;
+	public void setIdAlbum(Long idAlbum) {
+		this.idAlbum = idAlbum;
 	}
 
 	/**
@@ -159,8 +159,8 @@ public class Albun {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idAlbun")
-	private Long idAlbun;
+	@Column(name="idAlbum")
+	private Long idAlbum;
 	
 	@Column(name="nombre", length = 100, nullable = false)
 	private String nombre;
