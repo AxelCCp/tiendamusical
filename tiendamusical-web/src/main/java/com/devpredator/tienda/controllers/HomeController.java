@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 
 import com.devpredator.tiendamusicalentities.dto.ArtistaAlbumDto;
 import com.devpredator.tiendamusicalservices.service.HomeService;
@@ -17,6 +18,7 @@ import com.devpredator.tiendamusicalservices.service.HomeService;
  * Clase q controla el flujo de informacion para la pantalla de home de cualquier tipo de usuario.
  */
 @ManagedBean
+@ViewScoped    																								//para qe genere un solo bean en todo el momento que nosotros estemos en una pantalla.
 public class HomeController {
 
 	/**
