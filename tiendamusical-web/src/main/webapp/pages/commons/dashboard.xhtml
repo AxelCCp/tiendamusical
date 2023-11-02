@@ -2,7 +2,10 @@
       xmlns:f="http://java.sun.com/jsf/core"      
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets"> <!-- para incluir contenido de otras pantallas en esta pantalla ... importa xhtml -->
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"> 
+      
+      <!-- http://java.sun.com/jsf/facelets : para incluir contenido de otras pantallas en esta pantalla ... importa xhtml -->
       
     
       <h:head>
@@ -15,9 +18,20 @@
       
       		<h:form id="formDashboard">
       		
+      		
+      		<ui:include src="/pages/commons/navbar.xhtml"></ui:include>
+      		
+      		
       			<div class="p-grid sample-layout">
+      				
       				<div class="p-col-12 p-md-2" style="background-color: black">
+      				
+      					<p:commandLink>
+      						<p:graphicImage name="imagenes/fondo_musica.png" width="100%;"></p:graphicImage>
+      					</p:commandLink>
+      					
       					<ui:include src="/pages/commons/panelmenu.xhtml"></ui:include>
+      					
       				</div>
       				
       				<div class="p-col-12 p-md-10 p-col-nogutter" style="background-color: black">
@@ -25,13 +39,23 @@
    							<div class="p-col-12">
    								
    								<!-- pantallas del cliente -->
-      							<ui:include src="/pages/cliente/home.xhtml"></ui:include>
+   								
+   								<c:if test="#{sessionBean.persona.rol.idRol == 4}"><!-- jstl -->
+   								
+   									<ui:include src="/pages/cliente/home.xhtml"></ui:include>
+   								
+   								</c:if>	
+   								
+   								
+      							
+      						
+      						
       						</div>
       					</div>
       				</div>
       				
    					<div class="p-col-12" style="background-color: black">
-      					Pie de pagina
+      					<p:outputLabel value="@Copyright by devpredator" style="color: white;"></p:outputLabel>
       				</div>
       				
       			</div>
