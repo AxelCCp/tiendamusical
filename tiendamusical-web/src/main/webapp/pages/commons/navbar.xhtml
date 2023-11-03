@@ -2,7 +2,12 @@
       xmlns:f="http://java.sun.com/jsf/core"      
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets"> <!-- para incluir contenido de otras pantallas en esta pantalla ... importa xhtml -->
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+      
+      
+      <!-- http://java.sun.com/jsf/facelets : para incluir contenido de otras pantallas en esta pantalla ... importa xhtml -->
+      <!-- http://primefaces.org/ui/extensions : para usar primefaces extensions -->
       
  
    
@@ -10,7 +15,10 @@
    		
    			<f:facet name="options">
    			
-   				<p:commandButton id="btnShopping" icon="pi pi-shopping-cart"></p:commandButton>
+   				<p:commandButton id="btnShopping" icon="pi pi-shopping-cart">
+   					<pe:badge content="2" rendered="true"></pe:badge>
+   				</p:commandButton>
+   				
    				<p:commandButton id="btnCerrarSesion" icon="pi pi-sign-out" action="#{sessionClosed.cerrarSesion}"></p:commandButton>
    			
    			</f:facet>

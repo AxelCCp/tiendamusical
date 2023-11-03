@@ -76,6 +76,14 @@
 	    <artifactId>log4j-api</artifactId>
 	    <version>${log4j-version}</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.primefaces.extensions/primefaces-extensions -->
+	<dependency>
+	    <groupId>org.primefaces.extensions</groupId>
+	    <artifactId>primefaces-extensions</artifactId>
+	    <version>${primefaces-extensions-version}</version>
+	</dependency>
+
 
   </dependencies>
 

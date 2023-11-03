@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.devpredator.tiendamusicalentities.dto.ArtistaAlbumDto;
 import com.devpredator.tiendamusicalentities.entities.Persona;
 
 /**
@@ -23,7 +24,6 @@ public class SessionBean {
 		System.out.println("Creando session... ");
 	}
 	
-		
 	/**
 	 * @return the persona
 	 */
@@ -37,7 +37,21 @@ public class SessionBean {
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
+	
+	 
+	/**
+	 * @return the artistaAlbumDto
+	 */
+	public ArtistaAlbumDto getArtistaAlbumDto() {
+		return ArtistaAlbumDto;
+	}
 
+	/**
+	 * @param artistaAlbumDto the artistaAlbumDto to set
+	 */
+	public void setArtistaAlbumDto(ArtistaAlbumDto artistaAlbumDto) {
+		ArtistaAlbumDto = artistaAlbumDto;
+	}
 
 
 
@@ -45,4 +59,8 @@ public class SessionBean {
 	 * Objeto persona q se mantendrá en la session;
 	 */
 	private Persona persona;
+	/**
+	 * Objeto que contendra la informacion del detalle del album seleccionado por el cliente.
+	 */
+	private ArtistaAlbumDto ArtistaAlbumDto;
 }

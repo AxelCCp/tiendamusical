@@ -18,6 +18,7 @@
         <!-- avoid duplicated logs with additivity=false -->
         <Logger name="com.mkyong" level="debug" additivity="false">
             <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
         </Logger>
         <Root level="info">
             <AppenderRef ref="LogToConsole"/>
