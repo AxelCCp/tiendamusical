@@ -51,9 +51,9 @@
    												<f:convertNumber type="currency" currencyCode="MXN" currencySymbol="$"></f:convertNumber>
    											</p:outputLabel>
    											
-   											<p:commandButton icon="pi pi-shopping-cart"></p:commandButton>
+   											<p:commandButton icon="pi pi-shopping-cart" action="#{detalleController.agregarAlbumCarrito(sessionBean.artistaAlbumDto)}" update="formDetalle:btnShopping"></p:commandButton>      <!-- 204 - min 5.30 - update : para actualizar el estado del carrito de compras. -->   
    											
-   											<p:selectOneMenu id="cboCantidad" value="">
+   											<p:selectOneMenu id="cboCantidad" value="#{detalleController.cantidadAlbumSeleccionada}">
    												<f:selectItem itemValue="1" itemLabel="1" ></f:selectItem>
    												<f:selectItem itemValue="2" itemLabel="2" ></f:selectItem>
    												<f:selectItem itemValue="3" itemLabel="3" ></f:selectItem>

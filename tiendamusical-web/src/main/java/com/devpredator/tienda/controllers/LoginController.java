@@ -1,6 +1,8 @@
 package com.devpredator.tienda.controllers;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -8,10 +10,12 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.devpredator.tienda.session.SessionBean;
 import com.devpredator.tienda.utils.CommonUtils;
+import com.devpredator.tiendamusicalentities.entities.CarritoAlbum;
 import com.devpredator.tiendamusicalentities.entities.Persona;
 import com.devpredator.tiendamusicalservices.service.LoginService;
 
@@ -40,6 +44,14 @@ public class LoginController {
 		if(personaConsultada != null) {
 			//CommonUtils.mostrarMensaje(FacesMessage.SEVERITY_INFO, "¡EXITOSO!", "Bienvenido al Home :)");
 			try {
+				
+				List<CarritoAlbum> carritoAlbumFiltrados = personaConsultada.getCarrito().getCarritosAlbum().stream().filter(ca -> 
+					ca.getEstatus().equals("PENDIENTE")).collect(Collectors.toList());
+				
+				personaConsultada.getCarrito().setCarritosAlbum(carritoAlbumFiltrados);
+				
+				LOGGER.info("Albums del carrito filtrados...");
+				
 				this.sessionBean.setPersona(personaConsultada);																					//almacena el usuario en la session.
 				CommonUtils.redireccionar("/pages/commons/dashboard.xhtml");
 			} catch (IOException e) {
@@ -122,5 +134,10 @@ public class LoginController {
 	
 	@ManagedProperty("#{sessionBean}")
 	private SessionBean sessionBean;
+	
+	/**
+	 * Objeto q nos permite mostrar los mensajes de log en la consola o en un archivo externo
+	 */
+	private static final Logger LOGGER = LogManager.getLogger(LoginController.class);
 	
 }

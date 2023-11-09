@@ -135,7 +135,7 @@ public class HomeController {
 	/**
 	 * Objeto q nos permite mostrar los mensajes de log en la consola o en un archivo externo
 	 */
-	private static final Logger LOGGER = LogManager.getLogger();
+	private static final Logger LOGGER = LogManager.getLogger(HomeController.class);
 	/**
 	 * Objeto que almacena informacion en session.
 	 */
